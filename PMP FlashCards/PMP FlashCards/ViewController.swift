@@ -10,9 +10,25 @@ import UIKit
 
 
 
-class ViewController: UIViewController , InshortsViewDataSource {
+class ViewController: UIViewController {
 
     var viewModel = ViewModel()
+    
+    // MARK: View Life Cycle Methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        if let view = InshortsView(frame: self.view.frame) {
+            view.dataSource = self
+            self.view.addSubview(view)
+        }
+    }
+}
+
+extension ViewController : InshortsViewDataSource {
+    
+    // MARK: InshortsViewDataSource Methods
+
     func numberOfItems(in inshortsView: InshortsView!) -> Int {
         
         if let numberofItems = viewModel?.numberOfCards() {
@@ -26,20 +42,6 @@ class ViewController: UIViewController , InshortsViewDataSource {
         let baseView = BaseView(frame: self.view.frame)
         baseView.infoLabel.attributedText = viewModel?.displayString(At: index)
         return baseView as UIView
+    }
     
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        
-        if let view = InshortsView(frame: self.view.frame) {
-            view.dataSource = self
-            self.view.addSubview(view)
-        }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
 }
-

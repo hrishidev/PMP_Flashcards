@@ -306,7 +306,6 @@
 
 - (void)viewTapped:(id)sender
 {
-//    NSLog(@"viewTapped");
     if (self.delegate) {
         [self.delegate inshortsView:self didSelectItemAtIndex:self.currentItemIndex];
     }

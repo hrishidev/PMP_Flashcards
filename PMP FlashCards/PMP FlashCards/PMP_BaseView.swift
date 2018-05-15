@@ -31,6 +31,9 @@ class BaseView: UIView {
         self.layer.addSublayer(gradientLayer)
         
         infoLabel.numberOfLines = 0
+        
+        let textFrame = CGRect(x: 24, y: 24, width:self.bounds.size.width - 48 , height: self.bounds.size.height - 48 )
+        infoLabel.frame = textFrame
         self.addSubview(infoLabel)
         
     }
