@@ -3,4 +3,3 @@
 //
 
 #import "InshortsView.h"
-#import "NewsCardView.h"
