@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3C419B0C20793D530005CF83 /* InshortsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C419B0B20793D530005CF83 /* InshortsView.m */; };
+		3C8970C620AAEFCC00438D10 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8970C520AAEFCC00438D10 /* BaseView.swift */; };
 		3C8F91C52078E2CA001E31E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8F91C42078E2CA001E31E5 /* AppDelegate.swift */; };
 		3C8F91C72078E2CA001E31E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8F91C62078E2CA001E31E5 /* ViewController.swift */; };
 		3C8F91CA2078E2CA001E31E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C8F91C82078E2CA001E31E5 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 		3C419B0920793D520005CF83 /* PMP FlashCards-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PMP FlashCards-Bridging-Header.h"; sourceTree = "<group>"; };
 		3C419B0A20793D530005CF83 /* InshortsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InshortsView.h; sourceTree = "<group>"; };
 		3C419B0B20793D530005CF83 /* InshortsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InshortsView.m; sourceTree = "<group>"; };
+		3C8970C520AAEFCC00438D10 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseView.swift; path = "PMP FlashCards/BaseView.swift"; sourceTree = SOURCE_ROOT; };
 		3C8F91C12078E2CA001E31E5 /* PMP FlashCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PMP FlashCards.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C8F91C42078E2CA001E31E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C8F91C62078E2CA001E31E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				3C419B0D20793D590005CF83 /* InShortView */,
 				3C8F91E1207933AC001E31E5 /* PMPCards.json */,
 				3C8F91C42078E2CA001E31E5 /* AppDelegate.swift */,
+				3C8970C520AAEFCC00438D10 /* BaseView.swift */,
 				3C8F91C62078E2CA001E31E5 /* ViewController.swift */,
 				3C8F91D62078E3D5001E31E5 /* PMPDataModel.swift */,
 				3C8F91C82078E2CA001E31E5 /* Main.storyboard */,
@@ -160,6 +163,7 @@
 			files = (
 				3C8F91C72078E2CA001E31E5 /* ViewController.swift in Sources */,
 				3C8F91C52078E2CA001E31E5 /* AppDelegate.swift in Sources */,
+				3C8970C620AAEFCC00438D10 /* BaseView.swift in Sources */,
 				3C419B0C20793D530005CF83 /* InshortsView.m in Sources */,
 				3C8F91D72078E3D5001E31E5 /* PMPDataModel.swift in Sources */,
 			);
