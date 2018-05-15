@@ -31,8 +31,14 @@ class BaseView: UIView {
         self.layer.addSublayer(gradientLayer)
         
         infoLabel.numberOfLines = 0
+        if #available(iOS 10.0, *) {
+            infoLabel.adjustsFontForContentSizeCategory = true
+        }
         
-        let textFrame = CGRect(x: 24, y: 24, width:self.bounds.size.width - 48 , height: self.bounds.size.height - 48 )
+        let margin = CGFloat(30.0)
+        let width = (self.bounds.size.width - (2 * margin))
+        let height = (self.bounds.size.height - (2 * margin))
+        let textFrame = CGRect(x: margin, y: margin, width: width , height:  height)
         infoLabel.frame = textFrame
         self.addSubview(infoLabel)
         
