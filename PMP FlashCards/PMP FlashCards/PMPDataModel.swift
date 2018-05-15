@@ -21,12 +21,17 @@ struct PMPData : Decodable {
               
                 let centerParagraph = NSMutableParagraphStyle()
                 centerParagraph.alignment = .center
-                let boldAttributes = [NSAttributedStringKey.font: UIFont(name: "Helvetica-Bold", size: 28)!, .paragraphStyle: centerParagraph]
+                let boldAttributes : [ NSAttributedStringKey : Any]
+                if #available(iOS 11.0, *) {
+                    boldAttributes = [NSAttributedStringKey.font: UIFont.preferredFont(forTextStyle:.largeTitle), .paragraphStyle: centerParagraph]
+                } else {
+                    boldAttributes = [NSAttributedStringKey.font: UIFont.preferredFont(forTextStyle:.title1), .paragraphStyle: centerParagraph]
+                }
                 let titleAttributedString = NSMutableAttributedString(string:self.title + "\n\n", attributes: boldAttributes)
 
-                let normalTextAttributes = [NSAttributedStringKey.font: UIFont(name: "Helvetica", size: 20)! , .paragraphStyle: centerParagraph]
+                let normalTextAttributes = [NSAttributedStringKey.font: UIFont.preferredFont(forTextStyle: .body) , .paragraphStyle: centerParagraph]
                 let descriptionAttributedString = NSMutableAttributedString(string:self.description, attributes: normalTextAttributes)
-                
+
                 titleAttributedString.append(descriptionAttributedString)
                 return titleAttributedString
             }
