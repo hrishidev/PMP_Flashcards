@@ -37,7 +37,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Ll5-3c-ek2"/>
-                                    <barButtonItem title="Setting" id="fgt-EE-cUj">
+                                    <barButtonItem title="Settings" id="fgt-EE-cUj">
                                         <connections>
                                             <action selector="onSettingsTapped:" destination="BYZ-38-t0r" id="4Rl-I6-s3O"/>
                                         </connections>
@@ -63,7 +63,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="autoPlay" destination="geo-5O-9DE" id="RZ3-K6-Ovj"/>
                         <outlet property="baseViewForSwipeView" destination="KEP-2X-0fI" id="cD9-dP-4Ig"/>
+                        <outlet property="settings" destination="fgt-EE-cUj" id="DdE-19-swO"/>
+                        <outlet property="voiceOver" destination="fCp-8d-kAQ" id="rIP-sR-OdO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -10,11 +10,16 @@ import UIKit
 
 
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
 
     var viewModel = ViewModel()
     var inshortBaseView = InshortsView(frame: CGRect.zero)
 
+    
+    @IBOutlet weak var autoPlay: UIBarButtonItem!
+    @IBOutlet weak var voiceOver: UIBarButtonItem!
+    @IBOutlet weak var settings: UIBarButtonItem!
+    
     @IBOutlet weak var baseViewForSwipeView: UIView!
     
     // MARK: View Life Cycle Methods
@@ -25,10 +30,28 @@ class ViewController: UIViewController {
         self.view.addSubview(inshortBaseView!)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.setColors(for: .aqua)
+    }
     
     override func viewWillLayoutSubviews() {
         self.inshortBaseView?.frame = baseViewForSwipeView.frame
         self.inshortBaseView?.layoutCards()
+    }
+    
+    func setColors(for colorSelection : ColorPalette) {
+        
+        self.autoPlay.tintColor = UIColor.textColor(selection: colorSelection)
+        self.voiceOver.tintColor = UIColor.textColor(selection: colorSelection)
+        self.settings.tintColor = UIColor.textColor(selection: colorSelection)
+
+//        let textAttribute = [NSAttributedStringKey.foregroundColor : UIColor.primaryFor(selection: colorSelection) ]
+//
+//        self.autoPlay.setTitleTextAttributes(textAttribute, for: .normal)
+//        self.voiceOver.setTitleTextAttributes(textAttribute, for: .normal)
+//        self.settings.setTitleTextAttributes(textAttribute, for: .normal)
     }
     
     
