@@ -2,8 +2,6 @@
 //  InshortsView.h
 //  InshortsTest
 //
-//  Created by Vikrant Sharma on 12/12/16.
-//  Copyright © 2016 VikrantSharma. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -14,13 +12,11 @@
 
 -(instancetype)initWithFrame:(CGRect)frame;
 - (void)layoutCards;
-
+-(void)startAutoPlay;
 @property (nonatomic, weak) id<InshortsViewDataSource> dataSource;
 @property (nonatomic, weak) id<InshortsViewDelegate> delegate;
 @property (nonatomic) NSInteger numberOfItems;
 @property (nonatomic) NSInteger currentItemIndex;
-
-
 @end
 
 @protocol InshortsViewDataSource <NSObject>

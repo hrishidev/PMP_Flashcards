@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseView: UIView {
+final class BaseView: UIView {
 
     let infoLabel : UILabel
     
@@ -17,18 +17,6 @@ class BaseView: UIView {
         super.init(frame: frame)
 
         self.isUserInteractionEnabled = true
-        
-        var primaryColor = UIColor(red:(186.0/255.0), green: (236.0/255.0), blue: (255.0/255.0), alpha: 1.0).cgColor
-        if #available(iOS 10.0, *) {
-            primaryColor = UIColor(displayP3Red: (186.0/255.0), green: (236.0/255.0), blue: (255.0/255.0), alpha: 1.0).cgColor
-        }
-        
-        let secondaryColor = UIColor.white.cgColor
-        
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [primaryColor,secondaryColor]
-        gradientLayer.frame = self.bounds
-        self.layer.addSublayer(gradientLayer)
         
         infoLabel.numberOfLines = 0
         if #available(iOS 10.0, *) {
@@ -40,7 +28,7 @@ class BaseView: UIView {
         let height = (self.bounds.size.height - (2 * margin))
         let textFrame = CGRect(x: margin, y: margin, width: width , height:  height)
         infoLabel.frame = textFrame
-        
+        self.setColors(for: .turquoise)
         self.addSubview(infoLabel)
         
     }
@@ -48,6 +36,28 @@ class BaseView: UIView {
      required init?(coder aDecoder: NSCoder) {
         infoLabel = UILabel()
         super.init(coder: aDecoder)
+    }
+    
+    
+    func setColors(for colorSelection : ColorPalette = .aqua) {
+        
+        let primaryColor = UIColor.primaryFor(selection: colorSelection).cgColor
+        let secondaryColor = UIColor.secondaryColor(selection: colorSelection).cgColor
+        let textColorForLabel = UIColor.textColor(selection: colorSelection)
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [primaryColor,secondaryColor]
+        gradientLayer.frame = self.bounds
+        
+        if let layersArray = self.layer.sublayers {
+            if layersArray.count > 0 {
+                let previousLayer = layersArray[0]
+                previousLayer.removeFromSuperlayer()
+            }
+        }
+        
+        self.layer.addSublayer(gradientLayer)
+        infoLabel.textColor = textColorForLabel
     }
     
 }
