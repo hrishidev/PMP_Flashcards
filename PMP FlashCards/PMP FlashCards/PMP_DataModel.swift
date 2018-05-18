@@ -9,6 +9,32 @@
 import UIKit
 import Foundation
 
+
+extension MutableCollection {
+    /// Shuffles the contents of this collection.
+    mutating func shuffle() {
+        let c = count
+        guard c > 1 else { return }
+        
+        for (firstUnshuffled, unshuffledCount) in zip(indices, stride(from: c, to: 1, by: -1)) {
+            // Change `Int` in the next line to `IndexDistance` in < Swift 4.1
+            let d: Int = numericCast(arc4random_uniform(numericCast(unshuffledCount)))
+            let i = index(firstUnshuffled, offsetBy: d)
+            swapAt(firstUnshuffled, i)
+        }
+    }
+}
+
+extension Sequence {
+    /// Returns an array with the contents of this sequence, shuffled.
+    func shuffled() -> [Element] {
+        var result = Array(self)
+        result.shuffle()
+        return result
+    }
+}
+
+
   struct PMPCard : Decodable {
     var  title : String
     var description : String
@@ -16,17 +42,22 @@ import Foundation
 
 struct PMPData : Decodable {
     var FlashCards : [PMPCard]
+    var shuffledCards : [PMPCard] {
+        get  {
+            return FlashCards.shuffled()
+        }
+    }
 }
 
 struct ViewModel {
     var cards : PMPData
     
     func numberOfCards() -> Int {
-        return cards.FlashCards.count
+        return cards.shuffledCards.count
     }
     
     func displayString(At index: Int) -> NSAttributedString {
-        let card = cards.FlashCards[index]
+        let card = cards.shuffledCards[index]
         let titleAttributedString = self.titleString(card: card)
         let descriptionString = self.descriptionString(card: card)
         titleAttributedString.append(descriptionString)

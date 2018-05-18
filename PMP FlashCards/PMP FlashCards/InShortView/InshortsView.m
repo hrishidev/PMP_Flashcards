@@ -43,7 +43,7 @@
     return self;
 }
 
-- (void)reloadData
+- (void)layoutCards
 {
     if (self.currentView) {
         [self.currentView removeGestureRecognizer:self.pangr];
@@ -99,10 +99,7 @@
     if (_dataSource != dataSource)
     {
         _dataSource = dataSource;
-        if (_dataSource)
-        {
-            [self reloadData];
-        }
+
     }
 }
 
@@ -272,7 +269,6 @@
         }
     }
     if (pangr.state == UIGestureRecognizerStateChanged) {
-//        NSLog(@"UIGestureRecognizerStateChanged");
         CGFloat animationDuration = (ABS(velocityY)*.0002)+.15;
 
         [UIView animateWithDuration:animationDuration delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{

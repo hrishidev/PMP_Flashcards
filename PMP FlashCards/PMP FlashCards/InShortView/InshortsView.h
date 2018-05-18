@@ -13,7 +13,7 @@
 @interface InshortsView : UIView
 
 -(instancetype)initWithFrame:(CGRect)frame;
-- (void)reloadData;
+- (void)layoutCards;
 
 @property (nonatomic, weak) id<InshortsViewDataSource> dataSource;
 @property (nonatomic, weak) id<InshortsViewDelegate> delegate;

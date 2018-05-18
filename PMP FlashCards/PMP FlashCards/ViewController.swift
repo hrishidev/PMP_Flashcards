@@ -13,6 +13,7 @@ import UIKit
 class ViewController: UIViewController {
 
     var viewModel = ViewModel()
+    var inshortBaseView = InshortsView(frame: CGRect.zero)
 
     @IBOutlet weak var baseViewForSwipeView: UIView!
     
@@ -20,12 +21,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let view = InshortsView(frame: baseViewForSwipeView.frame) {
-            view.dataSource = self
-            self.view.addSubview(view)
-        }
-        
+        inshortBaseView?.dataSource = self
+        self.view.addSubview(inshortBaseView!)
     }
+    
+    
+    override func viewWillLayoutSubviews() {
+        self.inshortBaseView?.frame = baseViewForSwipeView.frame
+        self.inshortBaseView?.layoutCards()
+    }
+    
     
     @IBAction func onAutoplayTapped(_ sender: Any) {
         
