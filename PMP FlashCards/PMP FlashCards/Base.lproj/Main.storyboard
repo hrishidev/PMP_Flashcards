@@ -66,6 +66,7 @@
                         <outlet property="autoPlay" destination="geo-5O-9DE" id="RZ3-K6-Ovj"/>
                         <outlet property="baseViewForSwipeView" destination="KEP-2X-0fI" id="cD9-dP-4Ig"/>
                         <outlet property="settings" destination="fgt-EE-cUj" id="DdE-19-swO"/>
+                        <outlet property="toolbar" destination="8RU-OD-uTj" id="jvU-Lv-ca5"/>
                         <outlet property="voiceOver" destination="fCp-8d-kAQ" id="rIP-sR-OdO"/>
                     </connections>
                 </viewController>

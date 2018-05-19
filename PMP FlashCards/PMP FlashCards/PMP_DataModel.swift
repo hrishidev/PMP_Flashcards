@@ -84,7 +84,7 @@ struct ViewModel {
         let centerParagraphStyle = NSMutableParagraphStyle()
         centerParagraphStyle.alignment = .center
 
-        let normalTextAttributes = [NSAttributedStringKey.font: UIFont.preferredFont(forTextStyle: .callout) , .paragraphStyle: centerParagraphStyle]
+        let normalTextAttributes = [NSAttributedStringKey.font: UIFont.preferredFont(forTextStyle: .body) , .paragraphStyle: centerParagraphStyle]
         let descriptionAttributedString = NSMutableAttributedString(string:card.description, attributes: normalTextAttributes)
         return descriptionAttributedString
 

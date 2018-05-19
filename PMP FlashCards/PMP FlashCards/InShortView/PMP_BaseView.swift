@@ -28,7 +28,7 @@ final class BaseView: UIView {
         let height = (self.bounds.size.height - (2 * margin))
         let textFrame = CGRect(x: margin, y: margin, width: width , height:  height)
         infoLabel.frame = textFrame
-        self.setColors(for: .turquoise)
+        self.setColors(for: .apricot)
         self.addSubview(infoLabel)
         
     }

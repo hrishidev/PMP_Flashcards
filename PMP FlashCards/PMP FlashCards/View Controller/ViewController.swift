@@ -16,6 +16,7 @@ final class ViewController: UIViewController {
     var inshortBaseView = InshortsView(frame: CGRect.zero)
 
     
+    @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var autoPlay: UIBarButtonItem!
     @IBOutlet weak var voiceOver: UIBarButtonItem!
     @IBOutlet weak var settings: UIBarButtonItem!
@@ -33,7 +34,7 @@ final class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.setColors(for: .aqua)
+        self.setColors(for: .apricot)
     }
     
     override func viewWillLayoutSubviews() {
@@ -43,17 +44,13 @@ final class ViewController: UIViewController {
     
     func setColors(for colorSelection : ColorPalette) {
         
-        self.autoPlay.tintColor = UIColor.textColor(selection: colorSelection)
-        self.voiceOver.tintColor = UIColor.textColor(selection: colorSelection)
-        self.settings.tintColor = UIColor.textColor(selection: colorSelection)
+        let selectedColor = UIColor.textColor(selection: colorSelection)
+        self.autoPlay.tintColor = selectedColor
+        self.voiceOver.tintColor = selectedColor
+        self.settings.tintColor = selectedColor
+        self.toolbar.barTintColor = UIColor.primaryFor(selection: colorSelection).lighter()
 
-//        let textAttribute = [NSAttributedStringKey.foregroundColor : UIColor.primaryFor(selection: colorSelection) ]
-//
-//        self.autoPlay.setTitleTextAttributes(textAttribute, for: .normal)
-//        self.voiceOver.setTitleTextAttributes(textAttribute, for: .normal)
-//        self.settings.setTitleTextAttributes(textAttribute, for: .normal)
     }
-    
     
     @IBAction func onAutoplayTapped(_ sender: Any) {
         
