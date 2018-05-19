@@ -5,11 +5,12 @@
 //
 
 #import "InshortsView.h"
+#import "PMPFlashCards-Swift.h"
 
 @interface InshortsView()
-@property (strong, nonatomic) UIView* previousView;
-@property (strong, nonatomic) UIView* currentView;
-@property (strong, nonatomic) UIView* nextView;
+@property (strong, nonatomic) PMPBaseView* previousView;
+@property (strong, nonatomic) PMPBaseView* currentView;
+@property (strong, nonatomic) PMPBaseView* nextView;
 @property (strong, nonatomic) UIPanGestureRecognizer* pangr;
 @property (strong, nonatomic) UITapGestureRecognizer* tapgr;
 @end
@@ -98,6 +99,14 @@
     }
 }
 
+- (void)updateColors {
+    
+    [self.currentView updateColors];
+    [self.previousView updateColors];
+    [self.nextView updateColors];
+    
+}
+
 
 // MARK: View Animation Methods
 
@@ -144,7 +153,7 @@
                 [self.currentView removeGestureRecognizer:self.pangr];
                 [self.currentView removeGestureRecognizer:self.tapgr];
                 
-                UIView* temp = self.previousView;
+                PMPBaseView* temp = self.previousView;
                 self.previousView = self.currentView;
                 self.currentView = self.nextView;
                 self.nextView = temp;
@@ -216,7 +225,7 @@
                 [self.currentView removeGestureRecognizer:self.pangr];
                 [self.currentView removeGestureRecognizer:self.tapgr];
                 
-                UIView* temp = self.nextView;
+                PMPBaseView* temp = self.nextView;
                 self.nextView = self.currentView;
                 self.currentView = self.previousView;
                 self.previousView = temp;

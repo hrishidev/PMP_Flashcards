@@ -8,7 +8,13 @@
 
 import UIKit
 
-final class BaseView: UIView {
+
+protocol ThemeColorChangeResponser {
+    func updateColors()
+     func setColors(for colorSelection : ColorPalette)
+}
+
+ @objc class PMPBaseView: UIView ,ThemeColorChangeResponser {
 
     let infoLabel : UILabel
     
@@ -28,7 +34,7 @@ final class BaseView: UIView {
         let height = (self.bounds.size.height - (2 * margin))
         let textFrame = CGRect(x: margin, y: margin, width: width , height:  height)
         infoLabel.frame = textFrame
-        self.setColors(for: .apricot)
+        self.updateColors()
         self.addSubview(infoLabel)
         
     }
@@ -38,6 +44,17 @@ final class BaseView: UIView {
         super.init(coder: aDecoder)
     }
     
+    
+    // MARK: Theme based color Methods
+    @objc public func updateColors() {
+     
+        // find out current saved color and set colors
+        
+        let selectedTheme = UserDefaults.standard.integer(forKey: UserDefaultsKeys.appTheme.rawValue)
+        if let colorSelection = ColorPalette(rawValue:selectedTheme) {
+            self.setColors(for: colorSelection)
+        }
+    }
     
     func setColors(for colorSelection : ColorPalette = .aqua) {
         

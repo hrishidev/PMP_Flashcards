@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3C419B0C20793D530005CF83 /* InshortsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C419B0B20793D530005CF83 /* InshortsView.m */; };
-		3C8970C620AAEFCC00438D10 /* PMP_BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8970C520AAEFCC00438D10 /* PMP_BaseView.swift */; };
+		3C8970C620AAEFCC00438D10 /* PMPBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8970C520AAEFCC00438D10 /* PMPBaseView.swift */; };
 		3C8F91C52078E2CA001E31E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8F91C42078E2CA001E31E5 /* AppDelegate.swift */; };
 		3C8F91C72078E2CA001E31E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8F91C62078E2CA001E31E5 /* ViewController.swift */; };
 		3C8F91CA2078E2CA001E31E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C8F91C82078E2CA001E31E5 /* Main.storyboard */; };
@@ -17,14 +17,15 @@
 		3C8F91D72078E3D5001E31E5 /* PMP_DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8F91D62078E3D5001E31E5 /* PMP_DataModel.swift */; };
 		3C8F91E2207933AC001E31E5 /* PMPCards.json in Resources */ = {isa = PBXBuildFile; fileRef = 3C8F91E1207933AC001E31E5 /* PMPCards.json */; };
 		3CE483F120AF4D4F00CE0A46 /* UIColorUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE483F020AF4D4F00CE0A46 /* UIColorUtility.swift */; };
+		3CE483F320B03FA000CE0A46 /* UserDefaultsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE483F220B03FA000CE0A46 /* UserDefaultsUtility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3C419B0920793D520005CF83 /* PMP FlashCards-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PMP FlashCards-Bridging-Header.h"; sourceTree = "<group>"; };
 		3C419B0A20793D530005CF83 /* InshortsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InshortsView.h; sourceTree = "<group>"; };
 		3C419B0B20793D530005CF83 /* InshortsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InshortsView.m; sourceTree = "<group>"; };
-		3C8970C520AAEFCC00438D10 /* PMP_BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PMP_BaseView.swift; path = "PMP FlashCards/InShortView/PMP_BaseView.swift"; sourceTree = SOURCE_ROOT; };
-		3C8F91C12078E2CA001E31E5 /* PMP FlashCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PMP FlashCards.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C8970C520AAEFCC00438D10 /* PMPBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PMPBaseView.swift; path = "PMP FlashCards/InShortView/PMPBaseView.swift"; sourceTree = SOURCE_ROOT; };
+		3C8F91C12078E2CA001E31E5 /* PMPFlashCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PMPFlashCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C8F91C42078E2CA001E31E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C8F91C62078E2CA001E31E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3C8F91C92078E2CA001E31E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -34,6 +35,7 @@
 		3C8F91D62078E3D5001E31E5 /* PMP_DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMP_DataModel.swift; sourceTree = "<group>"; };
 		3C8F91E1207933AC001E31E5 /* PMPCards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PMPCards.json; sourceTree = "<group>"; };
 		3CE483F020AF4D4F00CE0A46 /* UIColorUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorUtility.swift; sourceTree = "<group>"; };
+		3CE483F220B03FA000CE0A46 /* UserDefaultsUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,8 +52,6 @@
 		3C419B0D20793D590005CF83 /* InShortView */ = {
 			isa = PBXGroup;
 			children = (
-				3C419B0A20793D530005CF83 /* InshortsView.h */,
-				3C419B0B20793D530005CF83 /* InshortsView.m */,
 			);
 			name = InShortView;
 			sourceTree = "<group>";
@@ -76,7 +76,7 @@
 		3C8F91C22078E2CA001E31E5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3C8F91C12078E2CA001E31E5 /* PMP FlashCards.app */,
+				3C8F91C12078E2CA001E31E5 /* PMPFlashCards.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,7 +109,9 @@
 		3CE483ED20AF4ABC00CE0A46 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3C8970C520AAEFCC00438D10 /* PMP_BaseView.swift */,
+				3C8970C520AAEFCC00438D10 /* PMPBaseView.swift */,
+				3C419B0A20793D530005CF83 /* InshortsView.h */,
+				3C419B0B20793D530005CF83 /* InshortsView.m */,
 				3C419B0D20793D590005CF83 /* InShortView */,
 			);
 			name = View;
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				3CE483F020AF4D4F00CE0A46 /* UIColorUtility.swift */,
+				3CE483F220B03FA000CE0A46 /* UserDefaultsUtility.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -135,9 +138,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3C8F91C02078E2CA001E31E5 /* PMP FlashCards */ = {
+		3C8F91C02078E2CA001E31E5 /* PMPFlashCards */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3C8F91D32078E2CB001E31E5 /* Build configuration list for PBXNativeTarget "PMP FlashCards" */;
+			buildConfigurationList = 3C8F91D32078E2CB001E31E5 /* Build configuration list for PBXNativeTarget "PMPFlashCards" */;
 			buildPhases = (
 				3C8F91BD2078E2CA001E31E5 /* Sources */,
 				3C8F91BE2078E2CA001E31E5 /* Frameworks */,
@@ -147,9 +150,9 @@
 			);
 			dependencies = (
 			);
-			name = "PMP FlashCards";
+			name = PMPFlashCards;
 			productName = "PMP FlashCards";
-			productReference = 3C8F91C12078E2CA001E31E5 /* PMP FlashCards.app */;
+			productReference = 3C8F91C12078E2CA001E31E5 /* PMPFlashCards.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -181,7 +184,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3C8F91C02078E2CA001E31E5 /* PMP FlashCards */,
+				3C8F91C02078E2CA001E31E5 /* PMPFlashCards */,
 			);
 		};
 /* End PBXProject section */
@@ -206,8 +209,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C8F91C72078E2CA001E31E5 /* ViewController.swift in Sources */,
+				3CE483F320B03FA000CE0A46 /* UserDefaultsUtility.swift in Sources */,
 				3C8F91C52078E2CA001E31E5 /* AppDelegate.swift in Sources */,
-				3C8970C620AAEFCC00438D10 /* PMP_BaseView.swift in Sources */,
+				3C8970C620AAEFCC00438D10 /* PMPBaseView.swift in Sources */,
 				3C419B0C20793D530005CF83 /* InshortsView.m in Sources */,
 				3CE483F120AF4D4F00CE0A46 /* UIColorUtility.swift in Sources */,
 				3C8F91D72078E3D5001E31E5 /* PMP_DataModel.swift in Sources */,
@@ -357,6 +361,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = VBRW454B5P;
 				INFOPLIST_FILE = "PMP FlashCards/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -367,6 +372,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "hdHobby.PMP-FlashCards";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OBJC_BRIDGING_HEADER = "PMP FlashCards/PMP FlashCards-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -381,6 +387,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = VBRW454B5P;
 				INFOPLIST_FILE = "PMP FlashCards/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -409,7 +416,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3C8F91D32078E2CB001E31E5 /* Build configuration list for PBXNativeTarget "PMP FlashCards" */ = {
+		3C8F91D32078E2CB001E31E5 /* Build configuration list for PBXNativeTarget "PMPFlashCards" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3C8F91D42078E2CB001E31E5 /* Debug */,

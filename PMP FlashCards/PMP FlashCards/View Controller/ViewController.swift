@@ -33,8 +33,7 @@ final class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.setColors(for: .apricot)
+        self.updateColors()
     }
     
     override func viewWillLayoutSubviews() {
@@ -42,15 +41,7 @@ final class ViewController: UIViewController {
         self.inshortBaseView?.layoutCards()
     }
     
-    func setColors(for colorSelection : ColorPalette) {
-        
-        let selectedColor = UIColor.textColor(selection: colorSelection)
-        self.autoPlay.tintColor = selectedColor
-        self.voiceOver.tintColor = selectedColor
-        self.settings.tintColor = selectedColor
-        self.toolbar.barTintColor = UIColor.primaryFor(selection: colorSelection).lighter()
 
-    }
     
     @IBAction func onAutoplayTapped(_ sender: Any) {
         
@@ -69,6 +60,31 @@ final class ViewController: UIViewController {
     
 }
 
+
+// MARK: ThemeColorChangeResponser Methods
+
+extension ViewController : ThemeColorChangeResponser {
+    
+    func updateColors () {
+        
+        let selectedTheme = UserDefaults.standard.integer(forKey: UserDefaultsKeys.appTheme.rawValue)
+        let colorSelection = ColorPalette(rawValue: selectedTheme)
+        self.setColors(for: colorSelection!)
+        inshortBaseView?.updateColors()
+        
+    }
+    
+    func setColors(for colorSelection : ColorPalette = .aqua ) {
+        
+        let selectedColor = UIColor.textColor(selection: colorSelection)
+        self.autoPlay.tintColor = selectedColor
+        self.voiceOver.tintColor = selectedColor
+        self.settings.tintColor = selectedColor
+        self.toolbar.barTintColor = UIColor.primaryFor(selection: colorSelection).lighter()
+        
+    }
+}
+
 extension ViewController : InshortsViewDataSource {
     
     // MARK: InshortsViewDataSource Methods
@@ -81,11 +97,11 @@ extension ViewController : InshortsViewDataSource {
         return 0
     }
     
-    func inshortsView(_ inshortsView: InshortsView!, viewForItemAt index: Int, reusing view: UIView!) -> UIView! {
+    func inshortsView(_ inshortsView: InshortsView!, viewForItemAt index: Int, reusing view: UIView!) -> PMPBaseView! {
         
-        let baseView = BaseView(frame: baseViewForSwipeView.frame)
+        let baseView = PMPBaseView(frame: baseViewForSwipeView.frame)
         baseView.infoLabel.attributedText = viewModel?.displayString(At: index)
-        return baseView as UIView
+        return baseView 
     }
     
 }

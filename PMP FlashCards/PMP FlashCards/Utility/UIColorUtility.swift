@@ -9,8 +9,9 @@
 import Foundation
 
 
-enum ColorPalette {
-    case  aqua
+
+enum ColorPalette : Int {
+    case  aqua 
     case  turquoise
     case  cerulean
     case  azure
@@ -18,7 +19,7 @@ enum ColorPalette {
     case  apricot
     case olive
     case navy
-    case carcoal
+    case charcoal
     case silver
     case ivory /// with indigo text
     case black
@@ -26,7 +27,6 @@ enum ColorPalette {
 }
 
 extension UIColor {
-    
     
     class func hexStringToUIColor (_ hex:String) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
@@ -95,7 +95,7 @@ class func primaryFor( selection : ColorPalette) -> UIColor {
                 primaryColor = UIColor.hexStringToUIColor("#808000")
             case .navy:
                 primaryColor = UIColor.hexStringToUIColor("#000080")
-            case .carcoal:
+            case .charcoal:
                 primaryColor = UIColor.hexStringToUIColor("#808080")
             case .silver:
                 primaryColor = UIColor.hexStringToUIColor("#c0c0c0")
