@@ -11,8 +11,12 @@ import UIKit
 
 protocol ThemeColorChangeResponser {
     func updateColors()
-     func setColors(for colorSelection : ColorPalette)
+    func setColors(for colorSelection : ColorPalette)
+    func addGradient(for colorSelection : ColorPalette)
+
 }
+
+
 
  @objc class PMPBaseView: UIView ,ThemeColorChangeResponser {
 
@@ -58,9 +62,16 @@ protocol ThemeColorChangeResponser {
     
     func setColors(for colorSelection : ColorPalette = .aqua) {
         
+        self.addGradient(for: colorSelection)
+        let textColorForLabel = UIColor.textColor(selection: colorSelection)
+        infoLabel.textColor = textColorForLabel
+    }
+    
+    
+    func addGradient(for colorSelection : ColorPalette = .aqua) {
+
         let primaryColor = UIColor.primaryFor(selection: colorSelection).cgColor
         let secondaryColor = UIColor.secondaryColor(selection: colorSelection).cgColor
-        let textColorForLabel = UIColor.textColor(selection: colorSelection)
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [primaryColor,secondaryColor]
@@ -74,7 +85,5 @@ protocol ThemeColorChangeResponser {
         }
         
         self.layer.addSublayer(gradientLayer)
-        infoLabel.textColor = textColorForLabel
     }
-    
 }

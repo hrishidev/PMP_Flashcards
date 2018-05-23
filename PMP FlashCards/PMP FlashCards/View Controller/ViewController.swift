@@ -13,14 +13,13 @@ import UIKit
 final class ViewController: UIViewController {
 
     var viewModel = ViewModel()
-    var inshortBaseView = InshortsView(frame: CGRect.zero)
-
     
+    // MARK: View Outlet Methods
+    var inshortBaseView = InshortsView(frame: CGRect.zero)
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var autoPlay: UIBarButtonItem!
     @IBOutlet weak var voiceOver: UIBarButtonItem!
     @IBOutlet weak var settings: UIBarButtonItem!
-    
     @IBOutlet weak var baseViewForSwipeView: UIView!
     
     // MARK: View Life Cycle Methods
@@ -29,6 +28,7 @@ final class ViewController: UIViewController {
 
         inshortBaseView?.dataSource = self
         self.view.addSubview(inshortBaseView!)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,8 +41,8 @@ final class ViewController: UIViewController {
         self.inshortBaseView?.layoutCards()
     }
     
+    // MARK: Target Action Methods
 
-    
     @IBAction func onAutoplayTapped(_ sender: Any) {
         
         print("onAutoPlayTapped")
@@ -50,7 +50,8 @@ final class ViewController: UIViewController {
     
     @IBAction func onSettingsTapped(_ sender: Any) {
         
-        print("onSettingsTapped")
+        let settingsViewController = SettingsViewController(nibName: String(describing: SettingsViewController.self), bundle: nil)
+        self.present(settingsViewController, animated: true, completion: nil)
     }
     
     @IBAction func onVoiceOverTapped(_ sender: Any) {
@@ -64,6 +65,8 @@ final class ViewController: UIViewController {
 // MARK: ThemeColorChangeResponser Methods
 
 extension ViewController : ThemeColorChangeResponser {
+    func addGradient(for colorSelection: ColorPalette) {
+    }
     
     func updateColors () {
         
