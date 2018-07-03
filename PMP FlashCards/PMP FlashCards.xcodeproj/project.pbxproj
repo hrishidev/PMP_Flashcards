@@ -377,7 +377,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "hdHobby.PMP-FlashCards";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hdhobby.beta.PMP.Flashcards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -403,7 +403,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "hdHobby.PMP-FlashCards";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hdhobby.beta.PMP.Flashcards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PMP FlashCards/PMP FlashCards-Bridging-Header.h";
