@@ -70,8 +70,11 @@ extension ViewController : ThemeColorChangeResponser {
     
     func updateColors () {
         
-        let selectedTheme = UserDefaults.standard.integer(forKey: UserDefaultsKeys.appTheme.rawValue)
-        let colorSelection = ColorPalette(rawValue: selectedTheme)
+        let randomColor = arc4random_uniform(UInt32(ColorPalette.allCases.count - 1) )
+        let colorSelection = ColorPalette(rawValue: Int(randomColor))
+        UserDefaults.standard.set(colorSelection?.rawValue, forKey: UserDefaultsKeys.appTheme.rawValue)
+        UserDefaults.standard.synchronize()
+
         self.setColors(for: colorSelection!)
         inshortBaseView?.updateColors()
         

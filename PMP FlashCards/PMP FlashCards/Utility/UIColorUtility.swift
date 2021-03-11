@@ -10,7 +10,7 @@ import Foundation
 
 
 
-enum ColorPalette : Int {
+enum ColorPalette : Int, CaseIterable {
     case  aqua 
     case  turquoise
     case  cerulean
